@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function App() {
     //States to consult the location and the data that is gonna come back from the api
 
-    // https://api.openweathermap.org/data/2.5/weather?q=dublin&APPID=86bcfce152dd714021901d8484a429ac
+
 
     //consult API with axios
 
