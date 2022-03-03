@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import './App.css';
 
 export default function App() {
     //States to consult the location and the data that is gonna come back from the api
     const [location, setLocation] = useState('');
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        name: '-',
+        main: {
+            temp: '-',
+            humidity: '-'
+        }
+    });
 
     //consult API with axios
     const consultData = async () => {
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=86bcfce152dd714021901d8484a429ac`);
         console.log(response.data);
         setData(response.data);
         setLocation('');
@@ -23,7 +31,11 @@ export default function App() {
     return (
         <>
             <div className="container">
-                <input type='text' onChange={handleChange} />
+                <div className="searchCity">
+                    <input type='text' onChange={handleChange} />
+                    <button onClick={consultData}>Search</button>
+                </div>
+
                 <div className="top">
                     <div className="city">
                         City: {data.name}
@@ -38,7 +50,6 @@ export default function App() {
                     </div>
                 </div>
                 <div className="bottom">
-                    <button onClick={consultData}>CLICK ME</button>
                 </div>
             </div>
         </>
