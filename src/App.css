@@ -11,3 +11,18 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+.searchCity input {
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.searchCity button {
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.searchCity {
+    display: flex;
+    flex-direction: column;
+}
