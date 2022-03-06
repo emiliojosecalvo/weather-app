@@ -31,25 +31,21 @@ export default function App() {
     return (
         <>
             <div className="container">
-                <div className="searchCity">
-                    <input type='text' onChange={handleChange} />
-                    <button onClick={consultData}>Search</button>
-                </div>
 
                 <div className="top">
                     <div className="city">
-                        City: {data.name}
+                        <p>City: {data.name}</p>
                     </div>
                     <div className="temperature">
-                        temperature: {data.main.temp}
-                    </div>
-                    <div className="description">
+                        <p>Temperature: {data.main.temp}</p>
                     </div>
                     <div className="humidity">
-                        humidity: {data.main.humidity}%
+                        <p>Humidity: {data.main.humidity} %</p>
                     </div>
                 </div>
-                <div className="bottom">
+                <div className="searchCity">
+                    <input type='text' onChange={handleChange} />
+                    <button onClick={consultData}>S</button>
                 </div>
             </div>
         </>
