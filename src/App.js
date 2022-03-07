@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import './App.css';
 
 export default function App() {
@@ -44,8 +46,7 @@ export default function App() {
                     </div>
                 </div>
                 <div className="searchCity">
-                    <input type='text' onChange={handleChange} />
-                    <button onClick={consultData}>S</button>
+                    <input type='text' onChange={handleChange} placeholder='Press enter to search' onKeyDown={(e) => (e.key === 'Enter') && consultData()} />
                 </div>
             </div>
         </>
