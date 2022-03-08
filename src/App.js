@@ -27,6 +27,10 @@ export default function App() {
     const handleChange = (event) => {
         setLocation(event.target.value);
     }
+    const getTemperature = () => {
+        const result = Math.round(data.main.temp - 273);
+        return result;
+    }
     //show the main data on the app
 
     //Style the app
@@ -39,7 +43,7 @@ export default function App() {
                         <p>City: {data.name}</p>
                     </div>
                     <div className="temperature">
-                        <p>Temperature: {data.main.temp}</p>
+                        <p>Temperature: {getTemperature()} &#8451;</p>
                     </div>
                     <div className="humidity">
                         <p>Humidity: {data.main.humidity} %</p>
